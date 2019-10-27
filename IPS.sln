@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T1-Cesar", "T1-Cesar\T1-Cesar.csproj", "{CD289C0D-8177-4DF6-A0DE-259A62365E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2-LetterFrequency", "T2-LetterFrequency\T2-LetterFrequency.csproj", "{8C7B25FB-93AA-43F9-AFF8-7253B917211F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD289C0D-8177-4DF6-A0DE-259A62365E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD289C0D-8177-4DF6-A0DE-259A62365E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD289C0D-8177-4DF6-A0DE-259A62365E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD289C0D-8177-4DF6-A0DE-259A62365E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7B25FB-93AA-43F9-AFF8-7253B917211F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7B25FB-93AA-43F9-AFF8-7253B917211F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7B25FB-93AA-43F9-AFF8-7253B917211F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7B25FB-93AA-43F9-AFF8-7253B917211F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

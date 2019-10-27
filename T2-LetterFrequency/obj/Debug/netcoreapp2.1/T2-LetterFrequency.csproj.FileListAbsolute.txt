@@ -1,0 +1,11 @@
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/bin/Debug/netcoreapp2.1/T2-LetterFrequency.deps.json
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/bin/Debug/netcoreapp2.1/T2-LetterFrequency.runtimeconfig.json
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/bin/Debug/netcoreapp2.1/T2-LetterFrequency.runtimeconfig.dev.json
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/bin/Debug/netcoreapp2.1/T2-LetterFrequency.dll
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/bin/Debug/netcoreapp2.1/T2-LetterFrequency.pdb
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/obj/Debug/netcoreapp2.1/T2-LetterFrequency.csprojAssemblyReference.cache
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/obj/Debug/netcoreapp2.1/T2-LetterFrequency.csproj.CoreCompileInputs.cache
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/obj/Debug/netcoreapp2.1/T2-LetterFrequency.AssemblyInfoInputs.cache
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/obj/Debug/netcoreapp2.1/T2-LetterFrequency.AssemblyInfo.cs
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/obj/Debug/netcoreapp2.1/T2-LetterFrequency.dll
+/Users/ASMANandNASTYA/Projects/IPS/T2-LetterFrequency/obj/Debug/netcoreapp2.1/T2-LetterFrequency.pdb

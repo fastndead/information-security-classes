@@ -1,0 +1,11 @@
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/bin/Debug/netcoreapp2.1/T1-Cesar.deps.json
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/bin/Debug/netcoreapp2.1/T1-Cesar.runtimeconfig.json
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/bin/Debug/netcoreapp2.1/T1-Cesar.runtimeconfig.dev.json
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/bin/Debug/netcoreapp2.1/T1-Cesar.dll
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/bin/Debug/netcoreapp2.1/T1-Cesar.pdb
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/obj/Debug/netcoreapp2.1/T1-Cesar.csprojAssemblyReference.cache
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/obj/Debug/netcoreapp2.1/T1-Cesar.csproj.CoreCompileInputs.cache
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/obj/Debug/netcoreapp2.1/T1-Cesar.AssemblyInfoInputs.cache
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/obj/Debug/netcoreapp2.1/T1-Cesar.AssemblyInfo.cs
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/obj/Debug/netcoreapp2.1/T1-Cesar.dll
+/Users/ASMANandNASTYA/Projects/IPS/T1-Cesar/obj/Debug/netcoreapp2.1/T1-Cesar.pdb
