@@ -16,6 +16,7 @@ namespace T4_Polybius_square
             
             var encodedString = polybiusCipher.Encode(incomingMessage);
             var decodedString = polybiusCipher.Decode(encodedString);
+           
             using var output = new StreamWriter("../../../output.txt");
             output.WriteLine("Encoded message:\n");
             output.WriteLine(encodedString);
@@ -27,9 +28,10 @@ namespace T4_Polybius_square
 
     class PolybiusCipher
     {
-        private char[,] square;
+        private readonly char[,] square;
         public PolybiusCipher(string incomingMessage)
         {
+            incomingMessage = incomingMessage.ToLower();
             incomingMessage =  Regex.Replace(incomingMessage, @"\s+", string.Empty);
             char[] alphabet = incomingMessage.ToCharArray().Distinct().ToArray();
             int dimension = (int)Math.Ceiling(Math.Sqrt(alphabet.Length));
@@ -65,6 +67,7 @@ namespace T4_Polybius_square
 
         public string Encode(string stringToEncode)
         {
+            stringToEncode = stringToEncode.ToLower();
             StringBuilder encodedString = new StringBuilder(stringToEncode.Length);
             
             int w = square.GetLength(0); 
@@ -94,6 +97,7 @@ namespace T4_Polybius_square
 
         public string Decode(string stringToDecode)
         {
+            stringToDecode = stringToDecode.ToLower();
             string[] words = Regex.Split(stringToDecode, @"\s+");
             StringBuilder decodedString = new StringBuilder(stringToDecode.Length / 2);
             
