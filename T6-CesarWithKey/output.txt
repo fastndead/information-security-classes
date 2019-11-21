@@ -1,0 +1,4 @@
+Encoded message:
+llhnl  
+Decoded message:
+hello  

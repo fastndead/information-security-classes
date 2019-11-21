@@ -94,6 +94,10 @@ namespace T5_Vigenere
                 {
                     var currentShift = shifts.First(kvp => kvp.Key == key[keyIndex]).Value;
                     var currentIndex = Array.IndexOf(alphabet, letter);
+                    if (currentIndex == -1)
+                    {
+                        throw new Exception($"\"{letter}\" letter wasn't found in the alphabet while encoding");
+                    }
                     var resultIndex = (currentIndex + currentShift) % alphabetLength;
                     encodedString.Append(alphabet[resultIndex]);
                     
@@ -123,7 +127,10 @@ namespace T5_Vigenere
                 {
                     var currentShift = shifts.First(kvp => kvp.Key == key[keyIndex]).Value;
                     var currentIndex = Array.IndexOf(alphabet, letter);
-                    var difference = currentIndex - currentShift;
+                    if (currentIndex == -1)
+                    {
+                        throw new Exception($"\"{letter}\" letter wasn't found in the alphabet while decoding");
+                    }
                     var resultIndex = MathMod((currentIndex - currentShift), alphabetLength);
                     encodedString.Append(alphabet[resultIndex]);
                     
