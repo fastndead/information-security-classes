@@ -35,7 +35,7 @@ namespace T5_Vigenere
         public VigenereCipher(string incomingMessage, string key)
         {
             this.key = key;
-            incomingMessage = incomingMessage.ToLower();
+            incomingMessage = incomingMessage.ToLower() + key.ToLower();
             incomingMessage =  Regex.Replace(incomingMessage, @"\s+", string.Empty);
             this.alphabet = incomingMessage.ToCharArray().Distinct().ToArray();
 
