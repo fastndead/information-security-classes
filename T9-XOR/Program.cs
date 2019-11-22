@@ -30,13 +30,9 @@ namespace T9_XOR
     
      class XorCipher
     {
-        private readonly char[] alphabet;
         private readonly char[] key;
         public XorCipher(string incomingMessage, string key)
         {
-            incomingMessage = incomingMessage.ToLower() + key.ToLower();
-            incomingMessage =  Regex.Replace(incomingMessage, @"\s+", string.Empty);
-            this.alphabet = incomingMessage.ToCharArray().Distinct().ToArray();
             this.key = key.ToLower().ToCharArray();
 
         }
