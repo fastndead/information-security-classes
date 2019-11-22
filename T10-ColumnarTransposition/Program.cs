@@ -15,7 +15,7 @@ namespace T10_ColumnarTransposition
         {
             var inputStream = new StreamReader("../../../input.txt");
             var incomingMessage = inputStream.ReadToEnd();
-            const string key = "lemonn";
+            const string key = "lemon";
             var columnarTranspositionCipher = new ColumnarTranspositionCipher(incomingMessage, key);
             var encodedMessage = columnarTranspositionCipher.Encode(incomingMessage);
             var decodedMessage = columnarTranspositionCipher.Decode(encodedMessage);
@@ -47,30 +47,8 @@ namespace T10_ColumnarTransposition
         {
             stringToEncode = stringToEncode.ToLower();
             StringBuilder encodedString = new StringBuilder(stringToEncode.Length);
-            int rowsCount = (int)Math.Ceiling((double)stringToEncode.Length / (double)key.Length);
-            int columnCount = key.Length - 1;
-            char[][] matrix = new char[columnCount + 1][];
-            for (int i = 0; i <= columnCount; i++)
-            {
-                matrix[i] = new char[rowsCount];
-            }
+            (char[][] matrix, int rowsCount, int columnCount) = getMatrixFromString(stringToEncode);
 
-            var stringToEncodeEnumerator = stringToEncode.GetEnumerator();
-            
-            for (int j = 0; j < rowsCount; j++)
-            {
-                for (int i = 0; i <= columnCount; i++)
-                {
-                    if (stringToEncodeEnumerator.MoveNext())
-                    {
-                        matrix[i][j] = stringToEncodeEnumerator.Current;
-                    }
-                    else
-                    {
-                        matrix[i][j] = ' ';
-                    }
-                }
-            }
             
             KeyValuePair<int, int>[] shifts = getShifts();
 
@@ -79,36 +57,52 @@ namespace T10_ColumnarTransposition
             {
                 resultMatrix[shifts[i].Value] = matrix[shifts[i].Key];
             }
-
-
-            for (int j = 0; j < rowsCount; j++)
-            {
-                for (int i = 0; i <= columnCount; i++)
-                {
-                    encodedString.Append(resultMatrix[i][j]);
-                }
-            }
-            
-            return encodedString.ToString();
+            return getStringFromMatrix(resultMatrix, rowsCount, columnCount);
         }
         
         public string Decode(string stringToEncode)
         {
             stringToEncode = stringToEncode.ToLower();
-            StringBuilder encodedString = new StringBuilder(stringToEncode.Length);
+            (char[][] matrix, int rowsCount, int columnCount) = getMatrixFromString(stringToEncode);
+            
+            KeyValuePair<int, int>[] shifts = getShifts("reverse");
+            
+            char[][] resultMatrix = new char[matrix.Length][];
+            for (int i = 0; i < shifts.Length; i++)
+            {
+                resultMatrix[shifts[i].Value] = matrix[shifts[i].Key];
+            }
+            return getStringFromMatrix(resultMatrix, rowsCount, columnCount);
+        }
+
+        string getStringFromMatrix(char[][] matrix, int rowsCount, int columnCount)
+        {
+            StringBuilder resultString = new StringBuilder();
+
+            for (int j = 0; j < rowsCount; j++)
+            {
+                for (int i = 0; i < columnCount; i++)
+                {
+                    resultString.Append(matrix[i][j]);
+                }
+            }
+            return resultString.ToString();
+        }
+
+        Tuple<char[][], int, int> getMatrixFromString(string stringToEncode)
+        {
             int rowsCount = (int)Math.Ceiling((double)stringToEncode.Length / (double)key.Length);
-            int columnCount = key.Length - 1;
-            char[][] matrix = new char[columnCount + 1][];
-            for (int i = 0; i <= columnCount; i++)
+            int columnCount = key.Length;
+            char[][] matrix = new char[columnCount][];
+            for (int i = 0; i < columnCount; i++)
             {
                 matrix[i] = new char[rowsCount];
             }
-
             var stringToEncodeEnumerator = stringToEncode.GetEnumerator();
             
             for (int j = 0; j < rowsCount; j++)
             {
-                for (int i = 0; i <= columnCount; i++)
+                for (int i = 0; i < columnCount; i++)
                 {
                     if (stringToEncodeEnumerator.MoveNext())
                     {
@@ -120,25 +114,7 @@ namespace T10_ColumnarTransposition
                     }
                 }
             }
-            
-            KeyValuePair<int, int>[] shifts = getShifts("reverse");
-            
-            char[][] resultMatrix = new char[matrix.Length][];
-            for (int i = 0; i < shifts.Length; i++)
-            {
-                resultMatrix[shifts[i].Value] = matrix[shifts[i].Key];
-            }
-
-
-            for (int j = 0; j < rowsCount; j++)
-            {
-                for (int i = 0; i <= columnCount; i++)
-                {
-                    encodedString.Append(resultMatrix[i][j]);
-                }
-            }
-            
-            return encodedString.ToString();
+            return new Tuple<char[][], int, int>(matrix, rowsCount, columnCount);
         }
 
         KeyValuePair<int,int>[] getShifts(string type = "normal")
@@ -158,9 +134,6 @@ namespace T10_ColumnarTransposition
                     shifts[i] = new KeyValuePair<int, int>(i, key.IndexOf(sortedKey[i]));
                 }
             }
-
-
-
             return shifts;
         }
     }
