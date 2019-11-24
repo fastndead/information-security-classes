@@ -1,0 +1,4 @@
+Encoded message:
+MNSDLHQRTL
+Decoded message:
+lorem ipsum
