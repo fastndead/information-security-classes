@@ -1,4 +1,4 @@
 Encoded message:
->= 7?r;"!'?
+hmid n{u}c
 Decoded message:
 lorem ipsum

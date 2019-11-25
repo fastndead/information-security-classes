@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace T12_LfsrXor
+namespace T13_LinearCongruentialGenerator
 {
-
-    class Program
+     class Program
     {
         static void Main(string[] args)
         {
@@ -27,46 +26,30 @@ namespace T12_LfsrXor
 
     class XorCipher
     {
-        private readonly byte seed;
+        private readonly int seed;
+        private readonly int a;
+        private readonly int c;
+        private readonly int m;
 
         public XorCipher()
         {
             var rand = new System.Random();
-            this.seed = (byte)rand.Next(0,200);
-        }
-        bool LFSR(byte seed)
-        {
-            bool x1 = getBit(seed, 1);
-            bool x2 = getBit(seed, 2);
-            bool x3 = getBit(seed, 3);
-            bool x5 = getBit(seed, 5);
-            bool x8 = getBit(seed, 8);
-
-            return x1 ^ x2 ^ x3 ^ x5 ^ x8;
-        }
-
-        byte nextRandomByte(byte seed)
-        {
-            byte nextSeed = seed;
-            string stringSeed = "";
-            for (int i = 0; i < 8; i++)
-            {
-                var newBit = LFSR(nextSeed);
-                nextSeed = (byte)(nextSeed << 1);
-                if (newBit)
-                {
-                    nextSeed += 1;
-                }
-            }
-
-            return seed;
+            this.seed = rand.Next(0,200);
+            this.a = rand.Next(0,200);
+            this.c = rand.Next(0,200);
+            this.m = rand.Next(0,200);
         }
         
-        public static bool getBit(byte b, int bitNumber)
-        {
-            return (b & (1 << bitNumber-1)) != 0;
+        int mathMod(int a, int b) {
+            return (Math.Abs(a * b) + a) % b;
         }
-        
+
+        int nextRandomNumber(int seed)
+        {
+            return mathMod(a * seed + c, m);
+
+        }
+
         public string Encode(string stringToEncode)
         {
             byte[] stringToEncodeBytes = Encoding.ASCII.GetBytes(stringToEncode);
@@ -76,8 +59,8 @@ namespace T12_LfsrXor
 
             for (int i = 0; i < stringToEncodeBytes.Length; i++)
             {
-                var nexByte = nextRandomByte(nextSeed);
-                result[i] = (byte) (stringToEncodeBytes[i] ^ nexByte);
+                var nexByte = nextRandomNumber(nextSeed);
+                result[i] = (byte) (stringToEncodeBytes[i] ^ (byte)nexByte);
                 nextSeed = nexByte;
             }
 

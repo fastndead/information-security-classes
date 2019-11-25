@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T10-ColumnarTransposition",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T12-LfsrXor", "T12-LfsrXor\T12-LfsrXor.csproj", "{14098EEE-58E4-488A-9E3D-5BD82A37FE4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T13-LinearCongruentialGenerator", "T13-LinearCongruentialGenerator\T13-LinearCongruentialGenerator.csproj", "{108F86F6-5E1E-4293-83D5-32D36C507BCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{14098EEE-58E4-488A-9E3D-5BD82A37FE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14098EEE-58E4-488A-9E3D-5BD82A37FE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14098EEE-58E4-488A-9E3D-5BD82A37FE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108F86F6-5E1E-4293-83D5-32D36C507BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108F86F6-5E1E-4293-83D5-32D36C507BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108F86F6-5E1E-4293-83D5-32D36C507BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108F86F6-5E1E-4293-83D5-32D36C507BCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

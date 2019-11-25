@@ -82,5 +82,6 @@ namespace T6_CesarWithKey
             }
             return encodedString.ToString();
         }
+        
     }
 }
