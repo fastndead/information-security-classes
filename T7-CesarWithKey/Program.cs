@@ -13,7 +13,7 @@ namespace T6_CesarWithKey
         {
             var inputStream = new StreamReader("../../../input.txt");
             var incomingMessage = inputStream.ReadToEnd();
-            var cesarWithKeyCipher = new CesarWithKeyCipher(incomingMessage, "lemon");
+            var cesarWithKeyCipher = new CesarWithKeyCipher(incomingMessage, "лемон");
             var encodedMessage = cesarWithKeyCipher.Encode(incomingMessage);
             var decodedMessage = cesarWithKeyCipher.Decode(encodedMessage);
             
@@ -28,7 +28,6 @@ namespace T6_CesarWithKey
     
      class CesarWithKeyCipher
     {
-        private readonly List<KeyValuePair<char, int>> shifts = new List<KeyValuePair<char, int>>();
         private readonly char[] alphabet;
         private readonly int[] key;
         public CesarWithKeyCipher(string incomingMessage, string key)
@@ -80,7 +79,7 @@ namespace T6_CesarWithKey
             {
                 foreach (var letter in word)
                 {
-                    var decodedChar = alphabet[mathMod(Array.IndexOf(alphabet, letter) + alphabetLength - key[keyIndex], alphabetLength)];
+                    var decodedChar = alphabet[mathMod(Array.IndexOf(alphabet, letter) - key[keyIndex], alphabetLength)];
                     decodedString.Append(decodedChar);
                     
                     keyIndex++;

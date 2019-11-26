@@ -19,7 +19,7 @@ namespace T3_LetterPairFrequency
                 output.WriteLine($"Letter Pair \tFrequency");
                 foreach (var pairWithFrquency in result)
                 {
-                    output.WriteLine($"{pairWithFrquency.Key} \t\t\t\t{pairWithFrquency.Value}");
+                    output.WriteLine($"{pairWithFrquency.Key} \t\t\t\t{Math.Round(pairWithFrquency.Value, 3)}");
                 }
             }
             
@@ -27,13 +27,13 @@ namespace T3_LetterPairFrequency
 
         static List<KeyValuePair<string, double>> LetterPairFrequency(string input)
         {
-            
+            input = input.ToLower();
             var pairsDictionary = new Dictionary<string, double>();
             for (int i = 0; i < input.Length - 1; i ++)
             {
                 var pair = input.Substring(i, 2);
 
-                if (!Regex.IsMatch(pair, @"^[a-zA-Z]+$"))
+                if (!Regex.IsMatch(pair, @"^[а-яА-Я]+$"))
                 {
                     continue;
                 }

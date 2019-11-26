@@ -13,7 +13,7 @@ namespace T5_Vigenere
         {
             var inputStream = new StreamReader("../../../input.txt");
             var incomingMessage = inputStream.ReadToEnd();
-            var vigenereCipher = new VigenereCipher(incomingMessage, "lemon");
+            var vigenereCipher = new VigenereCipher(incomingMessage, "лемон");
             vigenereCipher.PrintSquare();
             var encodedMessage = vigenereCipher.Encode(incomingMessage);
             var decodedMessage = vigenereCipher.Decode(encodedMessage);
@@ -98,7 +98,8 @@ namespace T5_Vigenere
                     {
                         throw new Exception($"\"{letter}\" letter wasn't found in the alphabet while encoding");
                     }
-                    var resultIndex = (currentIndex + currentShift) % alphabetLength;
+
+                    var resultIndex = mathMod(currentIndex + currentShift, alphabetLength);
                     encodedString.Append(alphabet[resultIndex]);
                     
                     keyIndex++;
@@ -131,7 +132,7 @@ namespace T5_Vigenere
                     {
                         throw new Exception($"\"{letter}\" letter wasn't found in the alphabet while decoding");
                     }
-                    var resultIndex = MathMod((currentIndex - currentShift), alphabetLength);
+                    var resultIndex = mathMod((currentIndex - currentShift), alphabetLength);
                     encodedString.Append(alphabet[resultIndex]);
                     
                     keyIndex++;
@@ -146,7 +147,7 @@ namespace T5_Vigenere
             return encodedString.ToString();
         }
         
-        int MathMod(int a, int b) {
+        int mathMod(int a, int b) {
             return (Math.Abs(a * b) + a) % b;
         }
     }

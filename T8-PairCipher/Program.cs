@@ -38,9 +38,10 @@ namespace T6_CesarWithKey
             incomingMessage =  Regex.Replace(incomingMessage, @"\s+", string.Empty);
             this.alphabet = incomingMessage.ToCharArray().Distinct().ToArray();
             this.key = new char[(alphabet.Length / 2)];
+            var rand = new Random();
             for (int i = 0; i < this.key.Length; i++)
             {
-                this.key[i] = alphabet[i];
+                this.key[i] = alphabet[rand.Next(0, alphabet.Length)];
             }
 
             this.alphabetWithoutKeyLetters = alphabet.Where(val => Array.IndexOf(key, val) == -1).ToArray();

@@ -15,7 +15,7 @@ namespace T10_ColumnarTransposition
         {
             var inputStream = new StreamReader("../../../input.txt");
             var incomingMessage = inputStream.ReadToEnd();
-            const string key = "lemon";
+            const string key = "ябаколпвы";
             var columnarTranspositionCipher = new ColumnarTranspositionCipher(incomingMessage, key);
             var encodedMessage = columnarTranspositionCipher.Encode(incomingMessage);
             var decodedMessage = columnarTranspositionCipher.Decode(encodedMessage);
@@ -23,6 +23,7 @@ namespace T10_ColumnarTransposition
             using var output = new StreamWriter("../../../output.txt");
             output.WriteLine("Encoded message:");
             output.WriteLine(encodedMessage);
+            output.WriteLine("\n\n\n");
             output.WriteLine("Decoded message:");
             output.WriteLine(decodedMessage);
             output.Close();

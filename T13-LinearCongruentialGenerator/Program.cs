@@ -34,10 +34,10 @@ namespace T13_LinearCongruentialGenerator
         public XorCipher()
         {
             var rand = new System.Random();
-            this.seed = rand.Next(0,200);
-            this.a = rand.Next(0,200);
-            this.c = rand.Next(0,200);
-            this.m = rand.Next(0,200);
+            this.seed = 15;
+            this.a = 22;
+            this.c = 17;
+            this.m = 37;
         }
         
         int mathMod(int a, int b) {
@@ -47,7 +47,6 @@ namespace T13_LinearCongruentialGenerator
         int nextRandomNumber(int seed)
         {
             return mathMod(a * seed + c, m);
-
         }
 
         public string Encode(string stringToEncode)

@@ -32,7 +32,7 @@ namespace T12_LfsrXor
         public XorCipher()
         {
             var rand = new System.Random();
-            this.seed = (byte)rand.Next(0,200);
+            this.seed = 23;
         }
         bool LFSR(byte seed)
         {
